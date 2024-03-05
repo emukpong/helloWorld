@@ -1,0 +1,28 @@
+p {
+    color: darkolivegreen;
+    font-family: Georgia, serif;
+} /* All paragraphs will have green text with Georgia Serif font */
+h2 {
+    color: saddlebrown;
+    font-family: Georgia, serif;
+} /* All headers will have brown text with Georgia Serif font */
+table, td, th {
+    border-style: solid;
+    border-width: 3px;
+    border-color: saddlebrown;
+    border-collapse: collapse;
+} /* All tables will have a solid brown borders, 3px width */
+#mod-06-id {
+    color: darkolivegreen;
+    background-color: orange;
+    display: inline-block;
+    font-size: 14pt;
+} /* Highlighting id */
+.table-fill {
+    background-color: #D2B48C;
+} /* Tables w. rule filled w. light brown */
+img.logo {
+    width: 267px;
+    height: 72px;
+    border: 3px solid darkolivegreen;
+} /* Set image width, height, and add border */
