@@ -2,6 +2,10 @@ p {
     color: darkolivegreen;
     font-family: Georgia, serif;
 } /* All paragraphs will have green text with Georgia Serif font */
+h1 {
+    color: darkslategrey;
+    font-family: Georgia, serif;
+}
 h2 {
     color: saddlebrown;
     font-family: Georgia, serif;

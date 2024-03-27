@@ -1,0 +1,58 @@
+
+{% extends "base.html" %}
+
+{% block page_title %}Contact{% endblock %}
+
+{% block page_head %}Contact Form{% endblock %}
+
+{% block page_content %}
+<div class="container">
+    {% if form_submitted %}
+        <div class="container">
+            <h2>Thanks, see you again!</h2>
+            <div class="col-md-6">
+                <p>First Name:</p>
+                <p>{{ request.form.get('first_name') }}</p>
+            </div>
+            <div class="col-md-6">
+                <p>Last Name:</p>
+                <p>{{ request.form.get('last_name') }}</p>
+            </div>
+            <div class="col-md-6">
+                <p>Email:</p>
+                <p>{{ request.form.get('email') }}</p>
+            </div>
+            <div class="col-md-6">
+                <p>Your comments:</p>
+                <p>{{ request.form.get('additional_comments') }}</p>
+            </div>
+            <div>
+            <p><a href="{{ url_for('contact') }}">Complete form again</a></p>
+            </div>
+        </div>
+    {% else %}
+        <h2>Let's connect!</h2>
+        <div class="container">
+            <form class="row g-3" action="{{ url_for('contact') }}" method="post">
+                <div class="form-floating">
+                    <input type="text" class="form-control" name="first_name" placeholder="Jane">
+                    <label for="first_name">First Name</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" name="last_name" placeholder="Doe">
+                    <label for="last_name">Last Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" name="email" placeholder="name@example.com">
+                    <label for="email">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" name="additional_comments" placeholder="Say anything!">
+                    <label for="additional_comments">Additional Comments</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
