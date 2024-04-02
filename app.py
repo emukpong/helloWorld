@@ -47,11 +47,11 @@ def student_create():
         first_name = request.form['first_name']
         last_name = request.form['last_name']
         major_id = request.form['major_id']
-
+        email = request.form['email']
         birth_date = request.form['birth_date']
         is_honors = True if 'is_honors' in request.form else False
 
-        student = Student(first_name=first_name, last_name=last_name, major_id=major_id,
+        student = Student(first_name=first_name, last_name=last_name, email=email, major_id=major_id,
                           birth_date=dt.strptime(birth_date, '%Y-%m-%d'), is_honors=is_honors)
         db.session.add(student)
         db.session.commit()
@@ -82,6 +82,7 @@ def student_edit(student_id):
         if student:
             student.first_name = request.form['first_name']
             student.last_name = request.form['last_name']
+            student.email = request.form['email']
             student.major_id = request.form['major_id']
             student.birthdate = dt.strptime(request.form['birth_date'], '%Y-%m-%d')
             student.num_credits_completed = request.form['num_credits_completed']
