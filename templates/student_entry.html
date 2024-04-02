@@ -50,12 +50,17 @@
     {% endif %}
   </div>
   <div class="col-md-4">
-    <label for="email" class="form-label"><strong>Email</strong></label>
-    {% if action and action in ['create', 'update'] %}
-    <input type="email" class="form-control" id="email" name="email" maxlength="100" value="{{ student['email'] if student else '' }}" required>
-    {% else %}
-        <br>{{ student['email'] }}
-    {% endif %}
+      <label for="email" class="form-label"><strong>Email</strong></label>
+      {% if action and action in ['create', 'update'] %}
+      <input type="email" class="form-control {% if email_error %}is-invalid{% endif %}" id="email" name="email" maxlength="100" value="{{ student['email'] if student else '' }}" required>
+      {% else %}
+      <br>{{ student['email'] }}
+      {% endif %}
+      {% if email_error %}
+      <div class="invalid-feedback">
+        Please enter a valid email address.
+      </div>
+      {% endif %}
   </div>
   <div class="col-md-4">
     <label for="major_id" class="form-label"><strong>Major</strong></label>
