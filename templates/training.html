@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    Training
+{% endblock %}
+
+{% block page_head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+{% endblock %}
+
+{% block page_content %}
+    <!--Container for training module-->
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+           <div class="card">
+              <div class="card-header">
+                Training
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Welcome to your training for the TerpSys Student Information System.</h5>
+                <p class="card-text"> Training materials are currently under construction, but will be created very soon. Please check back soon or email <a href="mailto:eukpong@umd.edu">Emem Ukpong</a> if you wish to be placed on the waiting list.</p>
+                <a href="{{ url_for('student_view_all') }}" class="btn btn-primary">Back to Student View</a>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
